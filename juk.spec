@@ -1,5 +1,5 @@
 Name:		juk
-Version: 4.9.0
+Version: 4.9.2
 Release: 1
 Epoch:		3
 Summary:	A music player and manager for KDE
