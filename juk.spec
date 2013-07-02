@@ -1,5 +1,5 @@
 Name:		juk
-Version:	4.10.4
+Version:	4.10.5
 Release:	1
 Epoch:		3
 Summary:	A music player and manager for KDE
@@ -44,6 +44,9 @@ in fact, is on music management.
 %makeinstall_std -C build
 
 %changelog
+* Wed Jul 03 2013 Andrey Bondrov <andrey.bondrov@rosalab.ru> 3:4.10.5-1
+- New version 4.10.5
+
 * Wed Jun 05 2013 Andrey Bondrov <andrey.bondrov@rosalab.ru> 3:4.10.4-1
 - New version 4.10.4
 
