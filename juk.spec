@@ -1,6 +1,6 @@
 Name:		juk
 Version:	4.12.1
-Release:	1
+Release:	2
 Epoch:		3
 Summary:	A music player and manager for KDE
 Group:		Graphical desktop/KDE
