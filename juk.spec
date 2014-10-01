@@ -1,18 +1,16 @@
+Summary:	A music player and manager for KDE
 Name:		juk
 Version:	4.14.1
 Release:	1
 Epoch:		3
-Summary:	A music player and manager for KDE
+License:	GPLv2+
 Group:		Graphical desktop/KDE
-License:	GPLv2
-URL:		http://www.kde.org/applications/multimedia/juk/
-Source:		ftp://ftp.kde.org/pub/kde/stable/%{version}/src/%{name}-%{version}.tar.xz
-Requires:	kdebase4-runtime
-Conflicts:	kdemultimedia4-core < 3:4.5.71
-Conflicts:	kdemultimedia4-devel < 3:4.6.90-3
-BuildRequires:	kdelibs4-devel
+Url:		http://www.kde.org/applications/multimedia/juk/
+Source0:	ftp://ftp.kde.org/pub/kde/stable/%{version}/src/%{name}-%{version}.tar.xz
 BuildRequires:	libtunepimp-devel
+BuildRequires:	kdelibs4-devel
 BuildRequires:	pkgconfig(taglib) >= 1.7
+Requires:	kdebase4-runtime
 
 %description
 JuK is an audio jukebox application, supporting collections of MP3, Ogg
@@ -21,15 +19,16 @@ audio files, and manage your collection and playlists. It's main focus,
 in fact, is on music management.
 
 %files
+%doc %{_kde_docdir}/HTML/en/juk
+%{_kde_applicationsdir}/juk.desktop
 %{_kde_appsdir}/juk
 %{_kde_bindir}/juk
+%{_kde_datadir}/appdata/juk.appdata.xml
 %{_kde_iconsdir}/*/*/apps/juk.*
-%{_kde_applicationsdir}/juk.desktop
 %{_kde_services}/ServiceMenus/jukservicemenu.desktop
 %{_datadir}/dbus-1/interfaces/org.kde.juk.collection.xml
 %{_datadir}/dbus-1/interfaces/org.kde.juk.player.xml
 %{_datadir}/dbus-1/interfaces/org.kde.juk.search.xml
-%{_kde_docdir}/HTML/en/juk
 
 #------------------------------------------------------------------------------
 
@@ -46,6 +45,8 @@ in fact, is on music management.
 %changelog
 * Mon Sep 29 2014 Andrey Bondrov <andrey.bondrov@rosalab.ru> 3:4.14.1-1
 - New version 4.14.1
+- Update files
+- Drop no longer needed Conflicts
 
 * Tue Jul 15 2014 Andrey Bondrov <andrey.bondrov@rosalab.ru> 3:4.13.3-1
 - New version 4.13.3
