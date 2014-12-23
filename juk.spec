@@ -1,12 +1,12 @@
 Summary:	A music player and manager for KDE
 Name:		juk
-Version:	14.12.0
-Release:	1
+Version:	4.14.3
+Release:	2
 Epoch:		3
 License:	GPLv2+
 Group:		Graphical desktop/KDE
 Url:		http://www.kde.org/applications/multimedia/juk/
-Source0:	ftp://ftp.kde.org/pub/kde/stable/applications/%{version}/src/%{name}-%{version}.tar.xz
+Source0:	ftp://ftp.kde.org/pub/kde/stable/%{version}/src/%{name}-%{version}.tar.xz
 BuildRequires:	libtunepimp-devel
 BuildRequires:	kdelibs4-devel
 BuildRequires:	pkgconfig(taglib) >= 1.7
