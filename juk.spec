@@ -1,6 +1,6 @@
 Summary:	A music player and manager for KDE
 Name:		juk
-Version:	14.12.2
+Version:	15.04.0
 Release:	1
 Epoch:		3
 License:	GPLv2+
