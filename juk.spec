@@ -8,9 +8,9 @@ Group:		Graphical desktop/KDE
 Url:		http://www.kde.org/applications/multimedia/juk/
 Source0:	ftp://ftp.kde.org/pub/kde/stable/applications/%{version}/src/%{name}-%{version}.tar.xz
 BuildRequires:	libtunepimp-devel
-BuildRequires:	kdelibs4-devel
+BuildRequires:	kdelibs-devel
 BuildRequires:	pkgconfig(taglib) >= 1.7
-Requires:	kdebase4-runtime
+Requires:	kde-runtime
 
 %description
 JuK is an audio jukebox application, supporting collections of MP3, Ogg
