@@ -20,10 +20,10 @@ in fact, is on music management.
 
 %files
 %doc %{_kde_docdir}/HTML/en/juk
-%{_kde_applicationsdir}/juk.desktop
+%{_datadir}/applications/kde4/org.kde.juk.desktop
 %{_kde_appsdir}/juk
 %{_kde_bindir}/juk
-%{_kde_datadir}/appdata/juk.appdata.xml
+%{_kde_datadir}/metainfo/org.kde.kblackbox.appdata.xml
 %{_kde_iconsdir}/*/*/apps/juk.*
 %{_kde_services}/ServiceMenus/jukservicemenu.desktop
 %{_datadir}/dbus-1/interfaces/org.kde.juk.collection.xml
