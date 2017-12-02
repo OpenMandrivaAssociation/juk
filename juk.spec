@@ -1,6 +1,6 @@
 Summary:	A music player and manager for KDE
 Name:		juk
-Version:	17.08.3
+Version:	17.11.90
 Release:	1
 Epoch:		3
 License:	GPLv2+
@@ -8,10 +8,35 @@ Group:		Graphical desktop/KDE
 Url:		http://www.kde.org/applications/multimedia/juk/
 %define stable %([ "`echo %{version} |cut -d. -f3`" -ge 80 ] && echo -n un; echo -n stable)
 Source0:	http://download.kde.org/%{stable}/applications/%{version}/src/%{name}-%{version}.tar.xz
-BuildRequires:	libtunepimp-devel
-BuildRequires:	kdelibs-devel
 BuildRequires:	pkgconfig(taglib) >= 1.7
-Requires:	kde-runtime
+BuildRequires:	ninja
+BuildRequires:	cmake
+BuildRequires:	cmake(ECM)
+BuildRequires:	cmake(KF5Completion)
+BuildRequires:	cmake(KF5Config)
+BuildRequires:	cmake(KF5ConfigWidgets)
+BuildRequires:	cmake(KF5CoreAddons)
+BuildRequires:	cmake(KF5Crash)
+BuildRequires:	cmake(KF5GlobalAccel)
+BuildRequires:	cmake(KF5I18n)
+BuildRequires:	cmake(KF5IconThemes)
+BuildRequires:	cmake(KF5JobWidgets)
+BuildRequires:	cmake(KF5KIO)
+BuildRequires:	cmake(KF5Notifications)
+BuildRequires:	cmake(KF5TextWidgets)
+BuildRequires:	cmake(KF5Wallet)
+BuildRequires:	cmake(KF5WidgetsAddons)
+BuildRequires:	cmake(KF5WindowSystem)
+BuildRequires:	cmake(KF5XmlGui)
+BuildRequires:	cmake(Qt5Core)
+BuildRequires:	cmake(Qt5DBus)
+BuildRequires:	cmake(Qt5Gui)
+BuildRequires:	cmake(Qt5Network)
+BuildRequires:	cmake(Qt5Svg)
+BuildRequires:	cmake(Qt5Widgets)
+BuildRequires:	cmake(Qt5Xml)
+# Tunepimp support hasn't been ported to KDE5
+BuildConflicts:	libtunepimp-devel
 
 %description
 JuK is an audio jukebox application, supporting collections of MP3, Ogg
@@ -19,26 +44,25 @@ Vorbis, and FLAC audio files. It allows you to edit the "tags" of your
 audio files, and manage your collection and playlists. It's main focus,
 in fact, is on music management.
 
-%files
-%doc %{_kde_docdir}/HTML/en/juk
-%{_datadir}/applications/kde4/org.kde.juk.desktop
-%{_kde_appsdir}/juk
-%{_kde_bindir}/juk
-%{_kde_datadir}/metainfo/org.kde.juk.appdata.xml
-%{_kde_iconsdir}/*/*/apps/juk.*
-%{_kde_services}/ServiceMenus/jukservicemenu.desktop
-%{_datadir}/dbus-1/interfaces/org.kde.juk.collection.xml
-%{_datadir}/dbus-1/interfaces/org.kde.juk.player.xml
-%{_datadir}/dbus-1/interfaces/org.kde.juk.search.xml
+%files -f juk.lang
+%{_bindir}/juk
+%{_datadir}/kxmlgui5/juk
+%{_datadir}/icons/*/*/*/*.*
+%{_datadir}/metainfo/*.xml
+%{_datadir}/applications/org.kde.juk.desktop
+%{_datadir}/dbus-1/interfaces/org.kde.juk.*.xml
+%{_datadir}/juk
+%{_datadir}/kservices5/ServiceMenus/jukservicemenu.desktop
 
 #------------------------------------------------------------------------------
 
 %prep
 %setup -q
+%cmake_kde5
 
 %build
-%cmake_kde4 -DCMAKE_MINIMUM_REQUIRED_VERSION=2.6
-%make
+ninja -C build
 
 %install
-%makeinstall_std -C build
+%ninja_install -C build
+%find_lang juk --all-name --with-html
