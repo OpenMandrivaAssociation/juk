@@ -1,2 +1,4 @@
-sources:
+removed_sources:
   juk-17.12.1.tar.xz: 1f37854a5ec14e32b913dbd3f018b34208393dde
+sources:
+  juk-17.12.2.tar.xz: 412d3e3929587847789ffb766ffe5e6979da2233
