@@ -10,6 +10,7 @@ Url:		http://www.kde.org/applications/multimedia/juk/
 Source0:	http://download.kde.org/%{stable}/applications/%{version}/src/%{name}-%{version}.tar.xz
 BuildRequires:	pkgconfig(taglib) >= 1.7
 BuildRequires:	ninja
+BuildRequires:	appstream
 BuildRequires:	cmake
 BuildRequires:	cmake(ECM)
 BuildRequires:	cmake(KF5Completion)
@@ -33,6 +34,7 @@ BuildRequires:	cmake(Qt5DBus)
 BuildRequires:	cmake(Qt5Gui)
 BuildRequires:	cmake(Qt5Network)
 BuildRequires:	cmake(Qt5Svg)
+BuildRequires:	cmake(Qt5Test)
 BuildRequires:	cmake(Qt5Widgets)
 BuildRequires:	cmake(Qt5Xml)
 # Tunepimp support hasn't been ported to KDE5
