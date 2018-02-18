@@ -18,6 +18,7 @@ BuildRequires:	cmake(KF5Config)
 BuildRequires:	cmake(KF5ConfigWidgets)
 BuildRequires:	cmake(KF5CoreAddons)
 BuildRequires:	cmake(KF5Crash)
+BuildRequires:	cmake(KF5DocTools)
 BuildRequires:	cmake(KF5GlobalAccel)
 BuildRequires:	cmake(KF5I18n)
 BuildRequires:	cmake(KF5IconThemes)
@@ -37,6 +38,7 @@ BuildRequires:	cmake(Qt5Svg)
 BuildRequires:	cmake(Qt5Test)
 BuildRequires:	cmake(Qt5Widgets)
 BuildRequires:	cmake(Qt5Xml)
+
 # Tunepimp support hasn't been ported to KDE5
 BuildConflicts:	libtunepimp-devel
 
