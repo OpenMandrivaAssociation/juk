@@ -1,6 +1,6 @@
 Summary:	A music player and manager for KDE
 Name:		juk
-Version:	19.08.1
+Version:	19.08.2
 Release:	1
 Epoch:		3
 License:	GPLv2+
@@ -58,11 +58,12 @@ in fact, is on music management.
 %{_datadir}/dbus-1/interfaces/org.kde.juk.*.xml
 %{_datadir}/juk
 %{_datadir}/kservices5/ServiceMenus/jukservicemenu.desktop
+%{_datadir}/knotifications5/juk.notifyrc
 
 #------------------------------------------------------------------------------
 
 %prep
-%setup -q
+%autosetup -p1
 %cmake_kde5
 
 %build
