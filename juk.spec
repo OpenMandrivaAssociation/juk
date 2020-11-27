@@ -1,6 +1,6 @@
 Summary:	A music player and manager for KDE
 Name:		juk
-Version:	20.11.80
+Version:	20.11.90
 Release:	1
 Epoch:		3
 License:	GPLv2+
