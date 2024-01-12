@@ -1,8 +1,7 @@
 Summary:	A music player and manager for KDE
 Name:		plasma6-juk
-Version:	24.01.85
+Version:	24.01.90
 Release:	1
-Epoch:		3
 License:	GPLv2+
 Group:		Graphical desktop/KDE
 Url:		http://www.kde.org/applications/multimedia/juk/
@@ -52,7 +51,6 @@ in fact, is on music management.
 
 %files -f juk.lang
 %{_bindir}/juk
-%{_datadir}/kxmlgui6/juk
 %{_datadir}/icons/*/*/*/*.*
 %{_datadir}/metainfo/*.xml
 %{_datadir}/applications/org.kde.juk.desktop
@@ -64,7 +62,7 @@ in fact, is on music management.
 #------------------------------------------------------------------------------
 
 %prep
-%autosetup -p1
+%autosetup -p1 -n juk-%{version}
 %cmake \
 	-DKDE_INSTALL_USE_QT_SYS_PATHS:BOOL=ON \
 	-G Ninja
