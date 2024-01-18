@@ -25,6 +25,7 @@ BuildRequires:	cmake(KF6IconThemes)
 BuildRequires:	cmake(KF6JobWidgets)
 BuildRequires:	cmake(KF6KIO)
 BuildRequires:	cmake(KF6Notifications)
+BuildRequires:	cmake(KF6StatusNotifierItem)
 BuildRequires:	cmake(KF6TextWidgets)
 BuildRequires:	cmake(KF6Wallet)
 BuildRequires:	cmake(KF6WidgetsAddons)
@@ -35,11 +36,15 @@ BuildRequires:	cmake(Qt6Core)
 BuildRequires:	cmake(Qt6Concurrent)
 BuildRequires:	cmake(Qt6DBus)
 BuildRequires:	cmake(Qt6Gui)
+BuildRequires:  cmake(Qt6Qml)
+BuildRequires:  cmake(Qt6QmlCore)
+BuildRequires:  cmake(Qt6QmlNetwork)
 BuildRequires:	cmake(Qt6Network)
 BuildRequires:	cmake(Qt6Svg)
 BuildRequires:	cmake(Qt6Test)
 BuildRequires:	cmake(Qt6Widgets)
 BuildRequires:	cmake(Qt6Xml)
+BuildRequires:  qt6-qtbase-theme-gtk3
 
 # Tunepimp support hasn't been ported to KDE6
 BuildConflicts:	libtunepimp-devel
