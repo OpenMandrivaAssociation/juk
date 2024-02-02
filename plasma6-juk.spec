@@ -1,6 +1,6 @@
 Summary:	A music player and manager for KDE
 Name:		plasma6-juk
-Version:	24.01.90
+Version:	24.01.95
 Release:	1
 License:	GPLv2+
 Group:		Graphical desktop/KDE
