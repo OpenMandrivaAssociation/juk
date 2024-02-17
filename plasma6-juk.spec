@@ -1,12 +1,19 @@
+%define git 20240217
+%define gitbranch release/24.02
+%define gitbranchd %(echo %{gitbranch} |sed -e "s,/,-,g")
 Summary:	A music player and manager for KDE
 Name:		plasma6-juk
-Version:	24.01.95
-Release:	1
+Version:	24.01.96
+Release:	%{?git:0.%{git}.}1
 License:	GPLv2+
 Group:		Graphical desktop/KDE
 Url:		http://www.kde.org/applications/multimedia/juk/
 %define stable %([ "`echo %{version} |cut -d. -f3`" -ge 80 ] && echo -n un; echo -n stable)
+%if 0%{?git:1}
+Source0:	https://invent.kde.org/multimedia/juk/-/archive/%{gitbranch}/juk-%{gitbranchd}.tar.bz2#/juk-%{git}.tar.bz2
+%else
 Source0:	http://download.kde.org/%{stable}/release-service/%{version}/src/juk-%{version}.tar.xz
+%endif
 BuildRequires:	pkgconfig(taglib) >= 1.7
 BuildRequires:	ninja
 BuildRequires:	appstream
@@ -68,7 +75,7 @@ in fact, is on music management.
 #------------------------------------------------------------------------------
 
 %prep
-%autosetup -p1 -n juk-%{version}
+%autosetup -p1 -n juk-%{?git:%{gitbranchd}}%{!?git:%{version}}
 %cmake \
 	-DKDE_INSTALL_USE_QT_SYS_PATHS:BOOL=ON \
 	-G Ninja
