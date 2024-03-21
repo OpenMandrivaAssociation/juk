@@ -3,8 +3,8 @@
 %define gitbranchd %(echo %{gitbranch} |sed -e "s,/,-,g")
 Summary:	A music player and manager for KDE
 Name:		plasma6-juk
-Version:	24.02.0
-Release:	%{?git:0.%{git}.}2
+Version:	24.02.1
+Release:	%{?git:0.%{git}.}1
 License:	GPLv2+
 Group:		Graphical desktop/KDE
 Url:		http://www.kde.org/applications/multimedia/juk/
