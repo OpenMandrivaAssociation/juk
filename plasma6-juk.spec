@@ -7,7 +7,7 @@ Version:	24.08.2
 Release:	%{?git:0.%{git}.}1
 License:	GPLv2+
 Group:		Graphical desktop/KDE
-Url:		http://www.kde.org/applications/multimedia/juk/
+Url:		https://www.kde.org/applications/multimedia/juk/
 %define stable %([ "`echo %{version} |cut -d. -f3`" -ge 80 ] && echo -n un; echo -n stable)
 %if 0%{?git:1}
 Source0:	https://invent.kde.org/multimedia/juk/-/archive/%{gitbranch}/juk-%{gitbranchd}.tar.bz2#/juk-%{git}.tar.bz2
