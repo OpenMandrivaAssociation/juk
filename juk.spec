@@ -5,7 +5,7 @@ Release:	1
 Epoch:		3
 License:	GPLv2+
 Group:		Graphical desktop/KDE
-Url:		http://www.kde.org/applications/multimedia/juk/
+Url:		https://www.kde.org/applications/multimedia/juk/
 %define stable %([ "`echo %{version} |cut -d. -f3`" -ge 80 ] && echo -n un; echo -n stable)
 Source0:	http://download.kde.org/%{stable}/release-service/%{version}/src/%{name}-%{version}.tar.xz
 BuildRequires:	pkgconfig(taglib) >= 1.7
