@@ -59,6 +59,8 @@ BuildConflicts:	libtunepimp-devel
 BuildSystem:	cmake
 BuildOption:	-DKDE_INSTALL_USE_QT_SYS_PATHS:BOOL=ON
 
+%rename plasma6-juk
+
 %description
 JuK is an audio jukebox application, supporting collections of MP3, Ogg
 Vorbis, and FLAC audio files. It allows you to edit the "tags" of your
