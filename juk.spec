@@ -3,7 +3,7 @@
 %define gitbranchd %(echo %{gitbranch} |sed -e "s,/,-,g")
 Summary:	A music player and manager for KDE
 Name:		juk
-Version:	25.04.0
+Version:	25.04.3
 Release:	%{?git:0.%{git}.}1
 License:	GPLv2+
 Group:		Graphical desktop/KDE
@@ -56,13 +56,16 @@ BuildRequires:  qt6-qtbase-theme-gtk3
 # Tunepimp support hasn't been ported to KDE6
 BuildConflicts:	libtunepimp-devel
 
+BuildSystem:	cmake
+BuildOption:	-DKDE_INSTALL_USE_QT_SYS_PATHS:BOOL=ON
+
 %description
 JuK is an audio jukebox application, supporting collections of MP3, Ogg
 Vorbis, and FLAC audio files. It allows you to edit the "tags" of your
 audio files, and manage your collection and playlists. It's main focus,
 in fact, is on music management.
 
-%files -f juk.lang
+%files -f %{name}.lang
 %{_bindir}/juk
 %{_datadir}/icons/*/*/*/*.*
 %{_datadir}/metainfo/*.xml
@@ -71,18 +74,3 @@ in fact, is on music management.
 %{_datadir}/juk
 %{_datadir}/knotifications6/juk.notifyrc
 %{_datadir}/kio/servicemenus/jukservicemenu.desktop
-
-#------------------------------------------------------------------------------
-
-%prep
-%autosetup -p1 -n juk-%{?git:%{gitbranchd}}%{!?git:%{version}}
-%cmake \
-	-DKDE_INSTALL_USE_QT_SYS_PATHS:BOOL=ON \
-	-G Ninja
-
-%build
-ninja -C build
-
-%install
-%ninja_install -C build
-%find_lang juk --all-name --with-html
