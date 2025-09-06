@@ -51,6 +51,7 @@ BuildRequires:	cmake(Qt6Svg)
 BuildRequires:	cmake(Qt6Test)
 BuildRequires:	cmake(Qt6Widgets)
 BuildRequires:	cmake(Qt6Xml)
+BuildRequires:	cmake(Qt6Multimedia)
 BuildRequires:  qt6-qtbase-theme-gtk3
 
 # Tunepimp support hasn't been ported to KDE6
